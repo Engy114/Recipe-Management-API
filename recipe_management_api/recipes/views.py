@@ -6,6 +6,9 @@ from .serializers import RecipeSerializer
 from rest_framework import filters
 from django.http import JsonResponse
 from django.views import View
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
 
 class RecipePagination(PageNumberPagination):
     page_size = 5
@@ -29,3 +32,10 @@ class RecipeListView(View):
     def get(self, request):
         recipes = list(Recipe.objects.values())
         return JsonResponse({"recipes": recipes})
+
+
+
+api_view(['GET'])
+permission_classes([IsAuthenticated])
+def protected_view(request):
+    return Response({"message": "You have access to this protected route!"})
