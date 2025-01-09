@@ -136,3 +136,8 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://refreshing-happiness-production-9410.up.railway.app/admin/login/?next=/admin/css/base.css ",
+    # Add other trusted domains if necessary
+]
