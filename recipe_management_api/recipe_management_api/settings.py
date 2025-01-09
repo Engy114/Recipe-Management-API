@@ -132,6 +132,3 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
-
-# settings.py
-STATIC_ROOT = '/home/Engyrmansour/your_project/static'
