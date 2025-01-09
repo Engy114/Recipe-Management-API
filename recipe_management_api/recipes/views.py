@@ -4,6 +4,8 @@ from rest_framework.pagination import PageNumberPagination
 from .models import Recipe
 from .serializers import RecipeSerializer
 from rest_framework import filters
+from django.http import JsonResponse
+from django.views import View
 
 class RecipePagination(PageNumberPagination):
     page_size = 5
@@ -21,3 +23,9 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+
+class RecipeListView(View):
+    def get(self, request):
+        recipes = list(Recipe.objects.values())
+        return JsonResponse({"recipes": recipes})
