@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6!-qqx4ae#!4@e8p!h^6s4x$zr&31rw+c9j)(m1hm5c-ky+qk3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Engyrmansour.pythonanywhere.com']
 
 
 # Application definition
@@ -132,3 +132,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+# settings.py
+STATIC_ROOT = '/home/Engyrmansour/your_project/static'
